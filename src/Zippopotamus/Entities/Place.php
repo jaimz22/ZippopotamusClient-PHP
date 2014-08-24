@@ -39,4 +39,52 @@ class Place
 			$this->longitude = $data['longitude'];
 		}
 	}
-} 
+
+	/**
+	 * @return mixed
+	 */
+	public function getLatitude()
+	{
+		return $this->latitude;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getLongitude()
+	{
+		return $this->longitude;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getName()
+	{
+		return $this->name;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getPostalCode()
+	{
+		return $this->postalCode;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getState()
+	{
+		return $this->state;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getStateAbbreviation()
+	{
+		return $this->stateAbbreviation;
+	}
+}
