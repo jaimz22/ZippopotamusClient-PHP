@@ -10,6 +10,7 @@ namespace Zippopotamus\Service;
 use Zend\Http\Client;
 use Zend\Http\Headers;
 use Zend\Json\Json;
+use Zippopotamus\Entities\Response;
 
 final class Zippopotamus
 {
@@ -28,9 +29,11 @@ final class Zippopotamus
         $http->setMethod('GET');
 
         $response = $http->send();
-        $json     = Json::decode($response->getBody());
+        $json     = Json::decode($response->getBody(),true);
 
-        return $json;
+		$response = new Response($json);
+
+        return $response;
     }
 
     static public function place($countryCode, $stateCode, $city)
@@ -50,9 +53,10 @@ final class Zippopotamus
         $http->setMethod('GET');
 
         $response = $http->send();
-        $json     = Json::decode($response->getBody());
+        $json     = Json::decode($response->getBody(),true);
 
-        return $json;
+		$response = new Response($json);
+        return $response;
     }
 
     static public function nearby($countryCode, $postalCode)
